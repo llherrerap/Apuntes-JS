@@ -125,3 +125,6 @@ resultado=false || false
 //Negación !
 resultado=!true
 console.log(resultado)
+
+//Una variable nula no tiene asignado ningun valor
+let variableNula=null;
