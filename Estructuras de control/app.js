@@ -20,7 +20,7 @@ console.log(mayorEdad)
 
 //Estructura switch
 let opcion, num1,num2, resultado;
-opcion="Modulo"
+opcion="Suma"
 num1=12;
 num2=54
 
@@ -37,6 +37,10 @@ switch (opcion) {
         console.log("Escogiste la multiplicación!")
         resultado=num1*num2
         break
+    case "Division":
+        console.log("Escogiste la división!")
+        resultado=num1/num2
+        break
     default:
         console.log("Operación no definida")
         resultado=null;
@@ -44,7 +48,27 @@ switch (opcion) {
 }
 console.log(resultado)
 
-let nom, apellido, age, cancion, respuesta;
-nom="Liliana"
-apellido="Herrera"
-console.log(`Hola! Mi nombre es ${nom} ${apellido} y tengo ${age} años, mi canción favorita es ${cancion} y la respuesta es ${respuesta}`)
+/*Comentarios 
+de
+bloque */
+
+//Comentarios de linea 
+
+//Mientras (while): Se ejecuta siempre que la condición dada sea verdadera, una vez es falsa se sale del ciclo
+
+let numero=0;
+
+//Imprimir todos los numeros hasta el 10
+while(numero<=10){
+    console.log(`El numero va en ${numero}`)
+    numero++
+}
+
+//Para (For): Se ejecuta un número determinado de veces
+for(let i=1; i <= 10; i++){
+    console.log("Mensaje del for", i)
+}
+
+for(let i=10; i >= 1; i--){
+    console.log("Mensaje del for", i)
+}
