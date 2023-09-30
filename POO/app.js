@@ -11,6 +11,9 @@ class Mascota { //Definicion de una clase
     comer(){
         return "Estoy comiendo"
     }
+    saludar(){
+        return "Hola, soy una mascota"
+    }
 }
 
 //Definicion de un objeto sin clases
@@ -42,6 +45,7 @@ console.log(simba)
 console.log(`¿Tara es adoptada? ${tara.adoptado}`)
 //Metodos
 console.log(simba.comer())
+console.log(tara.saludar())
 
 //Herencia:
 class Perro extends Mascota{
@@ -53,6 +57,13 @@ class Perro extends Mascota{
     ladrar(){
         return "Guau guau"
     }
+    moverse(){
+        return "Me muevo en 4 patas"
+    }
+    //Sobreescritura del metodo saludar
+    saludar(){
+        return `Hola soy un perro y mi nombre es ${this.nombre}`
+    }
 }
 
 //Instanciar un clase hijo
@@ -61,3 +72,69 @@ const tinny = new Perro("Tinny", 7, true, "Grande")
 console.log(tinny.comer())
 //Accediendo a los metodos de la clase hijo
 console.log(tinny.ladrar())
+console.log(tinny.saludar())
+
+class Gato extends Mascota{
+    constructor(nombre, edad, adoptado, vidas){
+        super(nombre, edad, adoptado)
+        this.vidas=vidas
+    }
+    ronronear(){
+        return "Rrr..rrr"
+    }
+    cantidadVidas(){
+        return `${this.nombre} tiene ${this.vidas} vidas`
+    }
+    //Sobreescritura
+    saludar(){
+        return `Hola! Soy un gato y mi nombre es ${this.nombre}`
+    }
+}
+
+//Instanciar la clase gato
+const iker = new Gato("Iker", 1, true, 7)
+console.log(iker)
+console.log(iker.cantidadVidas())
+console.log(iker.ronronear())
+console.log(iker.saludar())
+
+const botas = new Gato("Botas", 5, true, 5)
+console.log(botas.cantidadVidas())
+console.log(botas.saludar())
+
+class Ave extends Mascota{
+    constructor(nombre, edad, color, tamanioPico){
+        super(nombre, edad)
+        this.color=color
+        this.tamanioPico=tamanioPico
+        //Plumas inicialmente esta vacio
+        this.plumas=null
+    }
+    cantar(){
+        return "Pio pio"
+    }
+    volar(){
+        return "Estoy volando!"
+    }
+    //Setters y getters
+    //Get es el metodo que obtiene algun valor de la clase
+    get getTamanioPico(){
+        return this.tamanioPico
+    }
+
+    //Set es el metodo que permite modificar el valor de alguna propiedad de la clase
+    set setPlumas(plumas){
+        this.plumas=plumas
+    }
+    get getPlumas(){
+        return this.plumas
+    }
+}
+
+const pollito = new Ave("Pollito", 3, "Amarillo", "Pequeño")
+console.log(pollito.volar())
+console.log(pollito.saludar())
+console.log(pollito.getTamanioPico)
+
+pollito.setPlumas="Largas"
+console.log(pollito.getPlumas)
