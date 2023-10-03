@@ -20,3 +20,13 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
 //Hacer un API FETCH que traiga los elementos del comments de jsonplaceholder https://jsonplaceholder.typicode.com/comments e imprimir el siguiente mensaje por cada uno de los elementos en el json
 // El correo ${elemento.email} dejo el siguiente mensaje ${elemento.body}
+
+fetch("https://jsonplaceholder.typicode.com/comments")
+
+.then(response => response.json())
+
+.then(comentarios => {
+    comentarios.forEach(comentario => {
+        console.log(`El correo ${comentario.email} dejo el siguiente mensaje ${comentario.body}`)
+    });
+})
