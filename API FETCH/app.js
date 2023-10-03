@@ -30,3 +30,13 @@ fetch("https://jsonplaceholder.typicode.com/comments")
         console.log(`El correo ${comentario.email} dejo el siguiente mensaje ${comentario.body}`)
     });
 })
+
+//API FETCH Para el JSON de datos
+fetch("datos.json")
+.then(respuesta => respuesta.json())
+.then(datos => {
+    console.log(datos)
+    datos.forEach(persona => {
+        console.log(`${persona.nombre} ${persona.apellido} tiene ${persona.edad} y su numero de telefono es ${persona.contacto.telefono}`)
+    });
+})
